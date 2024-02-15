@@ -11,7 +11,7 @@ import pytest
 from calculator.calculation import Calculation
 from calculator.operations import add, subtract, multiply, divide
 
-@pytest.mark.parametrize("a, b, operation, expected", [
+@pytest.mark.parametrize("a_var, b_var, operation, expected", [
     (Decimal('10'), Decimal('5'), add, Decimal('15')),
     (Decimal('10'), Decimal('5'), subtract, Decimal('5')),
     (Decimal('10'), Decimal('5'), multiply, Decimal('50')),
@@ -22,7 +22,7 @@ from calculator.operations import add, subtract, multiply, divide
     (Decimal('10'), Decimal('0.5'), divide, Decimal('20.0')),
 ])
 
-def test_calculation_operations(a, b, operation, expected):
+def test_calculation_operations(a_var, b_var, operation, expected):
     """
     Test calculation operations with various scenarios.
     
@@ -36,8 +36,8 @@ def test_calculation_operations(a, b, operation, expected):
         operation (function): The arithmetic operation to perform.
         expected (Decimal): The expected result of the operation.
     """
-    calc = Calculation(a, b, operation)
-    assert calc.perform() == expected, f"Failed {operation.__name__} operation with {a} and {b}"
+    calc = Calculation(a_var, b_var, operation)
+    assert calc.perform() == expected, f"Failed {operation.__name__} operation with {a_var} and {b_var}"
 
 def test_calculation_repr():
     """
@@ -48,7 +48,7 @@ def test_calculation_repr():
     """
     calc = Calculation(Decimal('10'), Decimal('5'), add)
     expected_repr = "Calculation(10, 5, add)"
-    assert calc.__repr__() == expected_repr, "The __repr__ method output does not match the expected string."
+    assert repr(calc) == expected_repr, "The __repr__ method output does not match the expected string."
 
 def test_divide_by_zero():
     """
