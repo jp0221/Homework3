@@ -11,18 +11,7 @@ import pytest
 from calculator.calculation import Calculation
 from calculator.operations import add, subtract, multiply, divide
 
-@pytest.mark.parametrize("a_var, b_var, operation, expected", [
-    (Decimal('10'), Decimal('5'), add, Decimal('15')),
-    (Decimal('10'), Decimal('5'), subtract, Decimal('5')),
-    (Decimal('10'), Decimal('5'), multiply, Decimal('50')),
-    (Decimal('10'), Decimal('5'), divide, Decimal('2')),
-    (Decimal('10.5'), Decimal('0.5'), add, Decimal('11.0')),
-    (Decimal('10.5'), Decimal('0.5'), subtract, Decimal('10.0')),
-    (Decimal('10.5'), Decimal('2'), multiply, Decimal('21.0')),
-    (Decimal('10'), Decimal('0.5'), divide, Decimal('20.0')),
-])
-
-def test_calculation_operations(a_var, b_var, operation, expected):
+def test_calculation_operations(a, b, operation, expected):
     """
     Test calculation operations with various scenarios.
     
@@ -36,8 +25,8 @@ def test_calculation_operations(a_var, b_var, operation, expected):
         operation (function): The arithmetic operation to perform.
         expected (Decimal): The expected result of the operation.
     """
-    calc = Calculation(a_var, b_var, operation)
-    assert calc.perform() == expected, f"Failed {operation.__name__} operation with {a_var} and {b_var}"
+    calc = Calculation(a, b, operation)
+    assert calc.perform() == expected, f"Failed {operation.__name__} operation with {a} and {b}"
 
 def test_calculation_repr():
     """
