@@ -1,3 +1,4 @@
+'''Testing main.py'''
 import pytest
 from main import calculate_and_print
 
@@ -13,6 +14,7 @@ from main import calculate_and_print
 ])
 
 def test_clculate_and_print(a_string, b_string, operation_string, expected_string, capsys):
+    '''Testing Calculate and Print'''
     calculate_and_print(a_string, b_string, operation_string)
     captured = capsys.readouterr()
     assert captured.out.strip() == expected_string
