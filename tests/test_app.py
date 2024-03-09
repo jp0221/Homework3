@@ -3,9 +3,10 @@ import pytest
 from app import App
 
 def test_app_get_environment_variable():
+    """Test app get enviornment variable"""
     app = App()
 #   Retrieve the current environment setting
-    current_env = app.get_environment_variable('ENVIRONMENT')
+    current_env = app.get_enviornment_variable('ENVIORNMENT')
     # Assert that the current environment is what you expect
     assert current_env in ['DEVELOPMENT', 'TESTING', 'PRODUCTION'], f"Invalid ENVIRONMENT: {current_env}"
 

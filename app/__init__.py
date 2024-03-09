@@ -30,7 +30,7 @@ class App:
         logging.info("Enviornment variables loaded.")
         return settings
     
-    def get_enviornment_variables(self, env_var: str = 'ENVIORNMENT'):
+    def get_enviornment_variable(self, env_var: str = 'ENVIORNMENT'):
         return self.settings.get(env_var, None)
 
     def load_plugins(self):
