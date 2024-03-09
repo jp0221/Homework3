@@ -7,3 +7,5 @@
 2024-03-09 16:15:38,939 - root - INFO - Command 'subtract' from plugin 'subtract' registered.
 2024-03-09 16:15:38,939 - root - INFO - Application started. Type 'exit' to exit.
 2024-03-09 16:15:53,559 - root - INFO - The result of 10 + 20 is 30
+2024-03-09 16:18:40,976 - root - INFO - Application exit.
+2024-03-09 16:18:40,977 - root - INFO - Application shutdown.
